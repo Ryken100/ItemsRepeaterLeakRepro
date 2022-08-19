@@ -16,6 +16,8 @@ namespace ConvertingCollectionProxyItemsRepeaterMemoryLeakDemo
             this.InitializeComponent();
 
             ReferenceCounter.Add(Repeater);
+            //ReferenceCounter.Add(this);
+            //ReferenceCounter.Add(_collection);
 
             Repeater.ItemsSource = _collection;
         }
