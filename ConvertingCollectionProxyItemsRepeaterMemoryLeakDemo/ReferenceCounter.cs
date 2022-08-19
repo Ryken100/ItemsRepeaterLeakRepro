@@ -41,22 +41,6 @@ namespace ConvertingCollectionProxyItemsRepeaterMemoryLeakDemo
             }
         }
 
-        public static int AliveCount
-        {
-            get
-            {
-                int count = 0;
-                GC.Collect();
-                foreach (var reference in References)
-                {
-                    if (reference.TryGetTarget(out _))
-                    {
-                        count++;
-                    }
-                }
-
-                return count;
-            }
-        }
+        public static int AliveCount => Instances.Count;
     }
 }
